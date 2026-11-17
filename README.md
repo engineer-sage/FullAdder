@@ -1,2 +1,28 @@
-# Verification of 1 bit FullAdder
+# Verification of 1 bit Full-Adder
 
+A simple 1 bit Full-Adder verification architecture which covers the following:
+    - coverage : TODO
+    - randomisation
+    - assertion : TODO
+    - interface with clocking block
+    - Full environment architecture(generator, driver, monitor and scoreboard)
+
+## Steps to Run
+1. Install the [verilator](https://github.com/verilator/verilator.git]).
+2. ```bash
+        git clone https://github.com/sagar-s-v/FullAdder.git
+        cd FullAdder
+        chmod +x buil_svv.sh
+        ./build_svv top top.sv
+    ```
+
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b <your branch name>`)
+3. Commit your changes (`git commit -m '<your message>'`)
+4. Push to the branch (`git push origin <your branch name>`)
+5. Open a Pull Request
