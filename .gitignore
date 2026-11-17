@@ -1,0 +1,5 @@
+*.drawio
+obj_dir/
+*.txt
+env/obj_dir/
+env/obj_dir
