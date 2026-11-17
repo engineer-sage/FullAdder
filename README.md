@@ -1,18 +1,18 @@
 # Verification of 1 bit Full-Adder
 
 A simple 1 bit Full-Adder verification architecture which covers the following:
-    - coverage : TODO
-    - randomisation
-    - assertion : TODO
-    - interface with clocking block
-    - Full environment architecture(generator, driver, monitor and scoreboard)
+- coverage : TODO
+- randomisation
+- assertion : TODO
+- interface with clocking block
+- Full environment architecture(generator, driver, monitor and scoreboard)
 
 ## Steps to Run
 1. Install the [verilator](https://github.com/verilator/verilator.git]).
 2. ```bash
         git clone https://github.com/sagar-s-v/FullAdder.git
         cd FullAdder
-        chmod +x buil_svv.sh
+        chmod +x build_svv.sh
         ./build_svv top top.sv
     ```
 
