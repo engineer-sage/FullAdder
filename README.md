@@ -13,7 +13,7 @@ A simple 1 bit Full-Adder verification architecture which covers the following:
         git clone https://github.com/sagar-s-v/FullAdder.git
         cd FullAdder
         chmod +x build_svv.sh
-        ./build_svv top top.sv
+        ./build_svv.sh top top.sv
     ```
 
 
