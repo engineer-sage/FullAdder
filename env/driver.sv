@@ -10,16 +10,16 @@ class driver;
  
   	task reset;
     	wait(!vif.reset);
-    	$display("TIME = %0t : reset started", $time);
+    	$display("TIME = %0tns : reset started", $time);
     		vif.drv_cb.a <= 0;
     		vif.drv_cb.b <= 0;
     		vif.drv_cb.cin <= 0;
     	wait(vif.reset);
-    	$display("TIME = %0t : reset ended", $time);
+    	$display("TIME = %0tns : reset ended", $time);
   endtask
 
 	task run;
-		$display("Driver started");
+		$display("TIME = %0tns : Driver started", $time);
     	repeat(8) begin
        		gen2drv.get(trns);
        		@(vif.drv_cb);
@@ -27,7 +27,7 @@ class driver;
        		vif.drv_cb.b <= trns.b;
        		vif.drv_cb.cin <= trns.cin;
      	end
-		$display("Driver Done");
+		$display("TIME = %0tns : Driver Done", $time);
    	endtask
  
 endclass

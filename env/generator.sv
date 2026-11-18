@@ -10,7 +10,7 @@ class generator;
   endfunction
   
   task run;
-	$display("Generator started");
+	$display("TIME = %0dns : Generator started", $time);
     trns = new();
     repeat(8) begin
       if(trns.randomize() == 0) $fatal(1, "Randomization failed");
@@ -18,7 +18,7 @@ class generator;
       gen2drv.put(trns.copy());
 	  gen2scb.put(trns.copy());
     end
-	$display("Generator Ended");
+	$display("TIME = %0dns : Generator Ended", $time);
   endtask
   
 endclass
