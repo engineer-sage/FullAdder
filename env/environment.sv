@@ -1,6 +1,7 @@
 `include "env/transaction.sv"
 `include "env/generator.sv"
 `include "env/driver.sv"
+`include "env/coverage.sv"
 `include "env/monitor.sv"
 `include "env/scoreboard.sv"
 
@@ -11,6 +12,7 @@ class environment;
 	driver drv;
 	monitor mon;
 	scoreboard scb;
+	coverage cov;
 
 	mailbox #(transaction) gen2drv;
 	mailbox #(transaction) gen2scb;
@@ -22,10 +24,11 @@ class environment;
 		gen2drv = new();
 		gen2scb = new();
 		mon2scb = new();
+		cov = new();
 
 		gen = new(gen2scb, gen2drv);
 		drv = new(gen2drv, vif);
-		mon = new(mon2scb, vif);
+		mon = new(mon2scb, vif, cov);
 		scb = new(mon2scb, gen2scb);
 	endfunction
 
