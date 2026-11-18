@@ -46,14 +46,24 @@ class environment;
 	endtask
 
 	task post_test;
-		$display("Test Finished succesfully");
+		$display("TIME = %0dns : Test Finished succesfully", $time);
+	endtask
+
+	task display_metrics;
+		$display("--------------------METRICS-----------------------");
+		$display("TRANSACTIONS =  %0d", scb.no_trans);
+		$display("COVERAGE = %0.2f%", cov.adder_cg.get_coverage());
+		$display("MATCHED = %0d", scb.matched);
+		$display("MISMATCHED = %0d", scb.mismatched);
+		$display("PASS PERCENTAGE = %0.2f%", (scb.matched/scb.no_trans)*100 );
+		$display("---------------------------------------------------");
 	endtask
 
 	task run;
 		pre_test();
 		test();
 		post_test();
-
+		display_metrics();
 		#20; $finish;
 	endtask
 
