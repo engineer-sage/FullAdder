@@ -55,7 +55,7 @@ class environment;
 		$display("COVERAGE = %0.2f%", cov.adder_cg.get_coverage());
 		$display("MATCHED = %0d", scb.matched);
 		$display("MISMATCHED = %0d", scb.mismatched);
-		$display("PASS PERCENTAGE = %0.2f%", (scb.matched/scb.no_trans)*100 );
+		$display("PASS PERCENTAGE = %0.2f%", (real' (scb.matched)/real' (scb.no_trans))*100 );
 		$display("---------------------------------------------------");
 	endtask
 
