@@ -17,15 +17,20 @@ class scoreboard;
     	    mon2scb.get(actual);
         	gen2scb.get(expected);
 
-			assert({expected.sum == actual.sum && expected.cout == actual.cout})
-    		$display("ASSERTION PASSED");
-    	   	else $error("""
+			assert({expected.sum == actual.sum && expected.cout == actual.cout}) begin
+    			$display("ASSERTION PASSED");
+				matched++;
+			end
+    	   	else begin 
+				$warning("""
 						ASSERTION FAILED:
         				INPUTS   : [a = %0d, b = %0d, cin = %0d]
         				EXPECTED : [sum = %0d, cout = %0d]
         				ACTUAL   : [sum = %0d, cout = %0d]""", 
 						actual.a, actual.b, actual.cin,
 						expected.sum,expected.cout,actual.sum,actual.cout);
+				mismatched++;
+			end
 			no_trans++;
 		end
 		$display("TIME = %0dns : Scoreboard Ended", $time);
