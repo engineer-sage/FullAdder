@@ -1,4 +1,5 @@
 *.drawio
+*.drawio.*
 obj_dir/
 *.txt
 env/obj_dir/
