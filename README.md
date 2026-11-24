@@ -1,10 +1,10 @@
 # Verification of 1 bit Full-Adder
 
 A simple 1 bit Full-Adder verification architecture which covers the following:
-- coverage : TODO
+- coverage 
 - randomisation
-- assertion : TODO
-- interface with clocking block
+- assertion 
+- interface with clocking blocks
 - Full environment architecture(generator, driver, monitor and scoreboard)
 
 ## Files
@@ -28,7 +28,7 @@ A simple 1 bit Full-Adder verification architecture which covers the following:
         chmod +x build_svv.sh
         ./build_svv.sh top top.sv
     ```
-** RUN IN LINUX OR WSL ENVIRONEMNT **
+**RUN IN LINUX OR WSL ENVIRONEMNT **
 
 
 ## Contributing
